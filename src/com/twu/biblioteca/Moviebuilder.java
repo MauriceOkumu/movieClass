@@ -8,13 +8,16 @@ public class Moviebuilder {
 
     public Moviebuilder(int year, String...args) {
         setYear(year);
+        setDirector(args[1]);
+        setRating(args[2]);
+        setTitle(args[0]);
     }
 
     public String getDirector() {
         return director;
     }
 
-    public void setDirector(String director) {
+    private void setDirector(String director) {
         this.director = director;
     }
 
@@ -23,7 +26,7 @@ public class Moviebuilder {
         return title;
     }
 
-    public void setTitle(String title) {
+    private void setTitle(String title) {
         this.title = title;
     }
 
@@ -33,12 +36,12 @@ public class Moviebuilder {
         return rating;
     }
 
-    public void setRating(String rating) {
+    private void setRating(String rating) {
         this.rating = rating;
     }
 
 
-    public void setYear(int year) {
+    private void setYear(int year) {
         this.year = year;
     }
     public int getYear() {
