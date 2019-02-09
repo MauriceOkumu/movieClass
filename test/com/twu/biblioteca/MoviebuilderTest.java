@@ -18,4 +18,14 @@ public class MoviebuilderTest {
     public void checkTitle() {
         assertEquals(movieList.getTitle(), "Shawshank redemption");
     }
+    @Test
+    public void checkRating() {
+        assertEquals(movieList.getRating(), "6 stars");
+    }
+    @Test
+    public void checkDirector() {
+        assertEquals(movieList.getDirector(), "Maurice");
+    }
+
+
 }
