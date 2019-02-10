@@ -60,22 +60,13 @@ public class Library {
            listOfMovies.remove(input);
            return checkedoutMovie;
        }catch(NullPointerException e) {
-           System.out.printf("You did not choose from 1 to 9. Try again");
+           System.out.printf("You did not choose from 1 to 9. Try again ");
            chooseMovie();
        }
+       reader.close();
        return checkedoutMovie;
 
     }
 
-    public void goHome() {
-
-        System.out.print("Do you wish to quit the Application? yes to quit or any other thing continue");
-        byebye = reader.scan();
-       if(byebye.equals("yes")) {
-           System.exit(0);
-       } else {
-           
-       }
-    }
 
 }
