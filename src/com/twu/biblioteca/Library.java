@@ -43,7 +43,7 @@ public class Library {
             user.checkedOutBooks.put(user.num++,chooseMovie());
 
         } else {
-            System.out.println("Okay thank you for visiting the Library today Bye;");
+            System.out.println("Okay thank you . Feel free to rerun the page if you change your mind!");
         }
 
     }

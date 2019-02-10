@@ -80,13 +80,15 @@ public class UserClass {
 
     public void goHome(UserClass user) throws NullPointerException {
         reader = new ScannerClass();
-        System.out.print("Do you wish to quit the Application? yes to quit or any other thing to continue");
+        System.out.print("Do you wish to quit the Application? yes to quit or any other thing to see your info");
         try {
             byebye = reader.scan();
             if (byebye.equals("yes")) {
+                System.out.println("Thank you for stopping by. Bye Bye!");
                 System.exit(0);
             } else {
-                checkOutBook();
+                showInfo();
+                System.out.println("Rerun the program if you want to checkout a movie!");
             }
         } catch (NullPointerException e) {
             System.out.println("Oink");
