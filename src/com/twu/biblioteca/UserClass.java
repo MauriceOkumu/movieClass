@@ -8,8 +8,9 @@ public class UserClass {
     private String name;
     private String email;
     private String password;
+    public int num = 0;
     private int libraryNumber;
-    public HashMap<String ,Moviebuilder> checkedOutBooks;
+    public HashMap<Integer,Moviebuilder> checkedOutBooks;
     public Library myLibrary;
 
     public UserClass(int libNumber, String...vargs) {
@@ -18,6 +19,7 @@ public class UserClass {
         setPassword(vargs[2]);
         setLibraryNumber(libNumber);
         setPhoneNumber(vargs[3]);
+        checkedOutBooks = new HashMap<Integer, Moviebuilder>();
 
     }
 
@@ -62,13 +64,14 @@ public class UserClass {
     public void setLibraryNumber(int libraryNumber) {
         this.libraryNumber = libraryNumber;
     }
-    public void checkOutBook(String codeKey) {
-        checkedOutBooks.put(codeKey, myLibrary.listOfMovies.get(codeKey));
+    public void checkOutBook() {
+        myLibrary = new Library();
+        myLibrary.checkoutMovies(this);
     }
     public void showInfo() {
         System.out.printf("Name : %s%nEmail : %s%nPhone Number %s%n", getName(), getEmail(), getPhoneNumber());
     }
-    public void exec() {
-        checkedOutBooks = new HashMap<String, Moviebuilder>();
-    }
+//    public void exec() {
+//        checkedOutBooks = new HashMap<String, Moviebuilder>();
+//    }
 }

@@ -1,11 +1,13 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
 import java.util.*;
 
 public class Library {
     public int num = 1;
     public HashMap<Integer, Moviebuilder> listOfMovies;
+    public ScannerClass reader;
+    public String answer;
+    Moviebuilder checkedoutMovie;
 
     public void listMovies() {
         for (HashMap.Entry<Integer, Moviebuilder> entry : listOfMovies.entrySet()) {
@@ -18,7 +20,7 @@ public class Library {
 
         listOfMovies.put(num++,new Moviebuilder(2009, "Courage the cowardly dog", "Towers","No rating"));
         listOfMovies.put(num++,new Moviebuilder(2013,"Escape from sobibor", "Joe", "5 stars"));
-        listOfMovies.put(num++,new Moviebuilder(1987,"Amargeddon","Steve", "10 stars"));
+        listOfMovies.put(num++,new Moviebuilder(1987,"Armageddon","Steve", "10 stars"));
         listOfMovies.put(num++,new Moviebuilder(2020, "Snow", "Flaky","10 stars"));
         listOfMovies.put(num++,new Moviebuilder(2009, "Heat", "Sun","10 stars"));
         listOfMovies.put(num++,new Moviebuilder(2011,"The Beginning", "Adam","3 stars"));
@@ -28,8 +30,34 @@ public class Library {
 
     }
     public void initiate() {
-
+        reader = new ScannerClass();
         stock();
-//        listMovies();
     }
+
+    public void checkoutMovies(UserClass user) {
+        initiate();
+        System.out.print("Do you want to see the movies available?");
+        answer = reader.scan();
+        if(answer.equals("yes")) {
+            listMovies();
+            user.checkedOutBooks.put(user.num++,chooseMovie());
+
+        } else {
+            System.out.println("Okay thank you for visiting the Library today");
+        }
+
+    }
+
+    public Moviebuilder chooseMovie() {
+        int input;
+       System.out.print("Choose a Movie Number from the list above");
+       input = Integer.parseInt(reader.scan());
+       System.out.println("This is the movie you checked out");
+       checkedoutMovie = listOfMovies.get(input);
+       System.out.println(checkedoutMovie.toString());
+       listOfMovies.remove(input);
+       return checkedoutMovie;
+
+    }
+
 }
