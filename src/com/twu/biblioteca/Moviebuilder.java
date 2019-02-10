@@ -47,4 +47,8 @@ public class Moviebuilder {
     public int getYear() {
         return year;
     }
+    public String toString() {
+        return "Title : "+ getTitle()+ "  => Director : "+ getDirector()+ " => Rating : "+ getRating()+
+                " => Release year :"+getYear();
+    }
 }
