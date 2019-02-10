@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class UserClass {
 
@@ -63,10 +62,13 @@ public class UserClass {
     public void setLibraryNumber(int libraryNumber) {
         this.libraryNumber = libraryNumber;
     }
-    public void checkOutBook() {
-
+    public void checkOutBook(String codeKey) {
+        checkedOutBooks.put(codeKey, myLibrary.listOfMovies.get(codeKey));
     }
-    public String showInfo() {
-        return "The User info will be here";
+    public void showInfo() {
+        System.out.printf("Name : %s%nEmail : %s%nPhone Number %s%n", getName(), getEmail(), getPhoneNumber());
+    }
+    public void exec() {
+        checkedOutBooks = new HashMap<String, Moviebuilder>();
     }
 }
