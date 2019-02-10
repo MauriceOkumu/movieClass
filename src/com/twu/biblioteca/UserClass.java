@@ -10,10 +10,12 @@ public class UserClass {
     private String password;
     public int num = 0;
     private int libraryNumber;
-    public HashMap<Integer,Moviebuilder> checkedOutBooks;
+    public HashMap<Integer, Moviebuilder> checkedOutBooks;
     public Library myLibrary;
+    ScannerClass reader;
+    String byebye;
 
-    public UserClass(int libNumber, String...vargs) {
+    public UserClass(int libNumber, String... vargs) {
         setName(vargs[0]);
         setEmail(vargs[1]);
         setPassword(vargs[2]);
@@ -57,6 +59,7 @@ public class UserClass {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
     public int getLibraryNumber() {
         return libraryNumber;
     }
@@ -64,14 +67,34 @@ public class UserClass {
     public void setLibraryNumber(int libraryNumber) {
         this.libraryNumber = libraryNumber;
     }
+
     public void checkOutBook() {
-        myLibrary = new Library();
         myLibrary.checkoutMovies(this);
+        goHome(this);
+
     }
+
     public void showInfo() {
         System.out.printf("Name : %s%nEmail : %s%nPhone Number %s%n", getName(), getEmail(), getPhoneNumber());
     }
-//    public void exec() {
-//        checkedOutBooks = new HashMap<String, Moviebuilder>();
-//    }
+
+    public void goHome(UserClass user) throws NullPointerException {
+        reader = new ScannerClass();
+        System.out.print("Do you wish to quit the Application? yes to quit or any other thing to continue");
+        try {
+            byebye = reader.scan();
+            if (byebye.equals("yes")) {
+                System.exit(0);
+            } else {
+                checkOutBook();
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Oink");
+
+        }
+    }
+        public void initialize () {
+            myLibrary = new Library();
+            checkOutBook();
+        }
 }

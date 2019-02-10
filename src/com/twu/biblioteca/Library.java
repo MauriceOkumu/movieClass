@@ -8,7 +8,6 @@ public class Library {
     public ScannerClass reader;
     public String answer;
     Moviebuilder checkedoutMovie;
-    String byebye;
 
     public void listMovies() {
         for (HashMap.Entry<Integer, Moviebuilder> entry : listOfMovies.entrySet()) {
