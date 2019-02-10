@@ -9,7 +9,7 @@ public class BibliotecaApp {
         UserClass user = new UserClass(234567789,"Maurice","a.m@yahoo.com","abc-defg","234567789");
         System.out.println("Hello, And Welcome to the Library");
         user.showInfo();
-        user.checkOutBook();
+        user.initialize();
 
     }
 }
