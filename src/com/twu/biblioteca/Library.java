@@ -8,6 +8,7 @@ public class Library {
     public ScannerClass reader;
     public String answer;
     Moviebuilder checkedoutMovie;
+    String byebye;
 
     public void listMovies() {
         for (HashMap.Entry<Integer, Moviebuilder> entry : listOfMovies.entrySet()) {
@@ -43,21 +44,38 @@ public class Library {
             user.checkedOutBooks.put(user.num++,chooseMovie());
 
         } else {
-            System.out.println("Okay thank you for visiting the Library today");
+            System.out.println("Okay thank you for visiting the Library today Bye;");
         }
 
     }
 
-    public Moviebuilder chooseMovie() {
+    public Moviebuilder chooseMovie() throws NullPointerException{
         int input;
-       System.out.print("Choose a Movie Number from the list above");
-       input = Integer.parseInt(reader.scan());
-       System.out.println("This is the movie you checked out");
-       checkedoutMovie = listOfMovies.get(input);
-       System.out.println(checkedoutMovie.toString());
-       listOfMovies.remove(input);
+       System.out.print("Choose a Movie Number from the list above to checkout a Movie");
+       try {
+           input = Integer.parseInt(reader.scan());
+           System.out.println("This is the movie you checked out");
+           checkedoutMovie = listOfMovies.get(input);
+           System.out.println(checkedoutMovie.toString());
+           listOfMovies.remove(input);
+           return checkedoutMovie;
+       }catch(NullPointerException e) {
+           System.out.printf("You did not choose from 1 to 9. Try again");
+           chooseMovie();
+       }
        return checkedoutMovie;
 
+    }
+
+    public void goHome() {
+
+        System.out.print("Do you wish to quit the Application? yes to quit or any other thing continue");
+        byebye = reader.scan();
+       if(byebye.equals("yes")) {
+           System.exit(0);
+       } else {
+           
+       }
     }
 
 }
