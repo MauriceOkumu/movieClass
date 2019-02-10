@@ -13,18 +13,18 @@ public class LibraryTest {
     }
     @Test
     public void listBooksTest() {
-        assertEquals(library.getMovie().size(), 9);
+        assertEquals(library.listOfMovies.size(), 9);
     }
     @Test
     public void lookTitle() {
-        assertEquals(library.getMovie().get(0).getYear(), 2009);
+        assertEquals(library.listOfMovies.get(7).getYear(), 2010);
     }
     @Test
     public void checkStars() {
-        assertEquals(library.getMovie().get(7).getRating(),"6 stars");
+        assertEquals(library.listOfMovies.get(7).getRating(),"10 stars");
     }
     @Test
     public void checkAnotherStar() {
-        assertEquals(library.getMovie().get(6).getRating(),"10 stars");
+        assertEquals(library.listOfMovies.get(6).getRating(),"3 stars");
     }
 }
