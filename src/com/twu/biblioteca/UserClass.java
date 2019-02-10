@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class UserClass {
@@ -8,9 +9,16 @@ public class UserClass {
     private String name;
     private String email;
     private String password;
+    private int libraryNumber;
+    public HashMap<String ,Moviebuilder> checkedOutBooks;
+    public Library myLibrary;
 
-    public UserClass(String...vargs) {
+    public UserClass(int libNumber, String...vargs) {
         setName(vargs[0]);
+        setEmail(vargs[1]);
+        setPassword(vargs[2]);
+        setLibraryNumber(libNumber);
+        setPhoneNumber(vargs[3]);
 
     }
 
@@ -47,6 +55,13 @@ public class UserClass {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+    public int getLibraryNumber() {
+        return libraryNumber;
+    }
+
+    public void setLibraryNumber(int libraryNumber) {
+        this.libraryNumber = libraryNumber;
     }
     public void checkOutBook() {
 

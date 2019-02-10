@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import java.util.HashMap;
+
 public class BibliotecaApp {
 
 
@@ -7,6 +9,7 @@ public class BibliotecaApp {
         Library lib = new Library();
         System.out.println("Hello, And Welcome to the Library");
         lib.initiate();
-        lib.listBooks();
+        lib.listMovies();
+
     }
 }
