@@ -32,6 +32,7 @@ public class Library {
     public void initiate() {
         reader = new ScannerClass();
         stock();
+        //reader.close();
     }
 
     public void checkoutMovies(UserClass user) {
@@ -62,7 +63,6 @@ public class Library {
            System.out.printf("You did not choose from 1 to 9. Try again ");
            chooseMovie();
        }
-       reader.close();
        return checkedoutMovie;
 
     }
