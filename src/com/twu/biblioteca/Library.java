@@ -37,7 +37,7 @@ public class Library {
 
     public void checkoutMovies(UserClass user) {
         initiate();
-        System.out.print("Do you want to see the movies available?");
+        System.out.print("Do you want to see the movies available ? type (yes /no)");
         answer = reader.scan();
         if(answer.equals("yes")) {
             listMovies();
