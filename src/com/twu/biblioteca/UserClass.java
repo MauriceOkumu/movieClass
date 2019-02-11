@@ -9,18 +9,21 @@ public class UserClass {
     private String email;
     private String password;
     public int num = 0;
-    private int libraryNumber;
+    private String libraryNumber;
     public HashMap<Integer, Moviebuilder> checkedOutBooks;
     public Library myLibrary;
     ScannerClass reader;
     String byebye;
+    public UserinputCapture captureInput;
 
-    public UserClass(int libNumber, String... vargs) {
-        setName(vargs[0]);
-        setEmail(vargs[1]);
-        setPassword(vargs[2]);
-        setLibraryNumber(libNumber);
-        setPhoneNumber(vargs[3]);
+    public UserClass() {
+        captureInput = new UserinputCapture();
+        captureInput.UserinputCaptureRun();
+        setName();
+        setEmail();
+        setPassword();
+        setLibraryNumber();
+        setPhoneNumber();
         checkedOutBooks = new HashMap<Integer, Moviebuilder>();
 
     }
@@ -30,8 +33,8 @@ public class UserClass {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName() {
+        this.name = captureInput.name;
     }
 
 
@@ -39,33 +42,26 @@ public class UserClass {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail() {
+        this.email = captureInput.email;
     }
 
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword() {
+        this.password = captureInput.password;
     }
 
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumber() {
+        this.phoneNumber = captureInput.phoneNumber;
     }
 
-    public int getLibraryNumber() {
-        return libraryNumber;
-    }
 
-    public void setLibraryNumber(int libraryNumber) {
-        this.libraryNumber = libraryNumber;
+    public void setLibraryNumber() {
+        this.libraryNumber = captureInput.libNumber;
     }
 
     public void checkOutBook() {
