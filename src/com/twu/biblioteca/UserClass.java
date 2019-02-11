@@ -76,7 +76,7 @@ public class UserClass {
 
     public void goHome(UserClass user) throws NullPointerException {
         reader = new ScannerClass();
-        System.out.print("Do you wish to quit the Application? yes to quit or any other thing to see your info");
+        System.out.print("Do you wish to quit the Application? type (yes / no) ");
         try {
             byebye = reader.scan();
             if (byebye.equals("yes")) {
