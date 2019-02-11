@@ -4,10 +4,10 @@ import java.util.HashMap;
 
 public class BibliotecaApp {
 
-
     public static void main(String[] args) {
         System.out.println("Hello, And Welcome to the Library");
-        UserClass user = new UserClass();
-        user.initialize();
+        System.out.println("This is the selection of movies we have today =>");
+        Librarian librarian  = new Librarian();
+
     }
 }
